@@ -9,6 +9,7 @@ public class BoardVO {
 	private String writer;
 	private String content;
 	private Date regdate;
+	private String userID;
 	private int cnt;
 	
 	public int getSeq() {
@@ -53,4 +54,11 @@ public class BoardVO {
 	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
+	public String getUserID() {
+		return userID;
+	}
+	public void setUserID(String userID) {
+		this.userID = userID;
+	}
+	
 }

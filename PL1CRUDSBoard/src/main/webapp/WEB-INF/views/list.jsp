@@ -26,12 +26,12 @@
 	<th>Edit</th>
 	<th>Delete</th>
 </tr>
-<c:forEach items="${list}" var="u">
+<c:forEach var="u" items="${list}">
 	<tr>
 		<td>${u.seq}</td>
 		<td>${u.title}</td>
 		<td>${u.category}</td>
-		<td>${u.writer}</td>
+		<td>${u.userID}</td>
 		<td>${u.content}</td>
 		<td>${u.regdate}</td>
 		<td><a href="editform/${u.seq}">Edit</a></td>

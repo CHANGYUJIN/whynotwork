@@ -1,11 +1,14 @@
 package com.mycom.myapp.user;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.ui.Model;
 
 @Controller
 @RequestMapping
@@ -20,7 +23,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/loginOk", method=RequestMethod.POST)
-	public String loginCheck(HttpSession session, UserVO vo) {
+	public String loginCheck(HttpSession session, UserVO vo, Model model) {
 		String returnURL ="";
 		if(session.getAttribute("login") != null) {
 			session.removeAttribute("login");
@@ -30,6 +33,7 @@ public class LoginController {
 		if(loginvo != null) {
 			System.out.println("로그인 성공");
 			session.setAttribute("login", loginvo);
+			session.setAttribute("id", loginvo.getUserid());
 			returnURL = "redirect:list";
 		} else {
 			System.out.println("로그인 실패");

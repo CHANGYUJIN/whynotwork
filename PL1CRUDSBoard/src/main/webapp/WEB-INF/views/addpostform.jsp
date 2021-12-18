@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String id = (String)session.getAttribute("id");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +17,7 @@
 		<tr><td>Category:</td><td><input type="text" name="category"/></td></tr>
 		<tr><td>Writer:</td><td><input type="text" name="writer"/></td></tr>
 		<tr><td>Content:</td><td><textarea cols="50" rows="5" name="content"></textarea></td>
+		<tr><td><input type="hidden" name="userID" value="<%=id%>" /></td></tr>
 	</table>
 	<button type="button" onclick="location.href='list'">view list</button>
 	<button type="submit">upload</button>

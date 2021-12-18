@@ -30,6 +30,7 @@
 			<exclude-mapping path="/resources/**" />
 			<exclude-mapping path="/img/**" />
 			<exclude-mapping path="/login" />
+			<exclude-mapping path="/loginOk" />
 			<beans:ref bean="LoginInterceptor" />
 		</interceptor>
 	</interceptors>
